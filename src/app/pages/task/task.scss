@@ -1,0 +1,9 @@
+.status-done {
+  color:  var(--mat-sys-primary);
+  font-weight: 500;
+}
+
+.status-pending {
+  color: var(--mat-sys-error);
+  font-weight: 500;
+}

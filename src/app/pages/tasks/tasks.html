@@ -1,0 +1,37 @@
+<div fxLayout="column" fxLayoutGap="10px">
+    @if (tasks$ | async; as tasks) {
+    @for(task of tasks; track $index) {
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+                <mat-card-title>{{ task.title }}</mat-card-title>
+                <div fxLayout="column" fxLayoutAlign="end end">
+                    <mat-card-subtitle>
+                        {{ task.createdAt | date: 'HH:mm dd.MM.yyyy' }} г.
+                    </mat-card-subtitle>
+                    <span [ngClass]="task.status ? 'status-done' : 'status-pending'">
+                        {{ task.status ? 'Выполнена' : 'Не выполнена' }}
+                    </span>
+                </div>
+            </div>
+        </mat-card-header>
+        @if (task.description) {
+        <mat-card-content>
+            <p>
+                {{task.description}}
+            </p>
+        </mat-card-content>
+        }
+        <mat-card-actions align="end">
+            <button matButton [routerLink]="['/tasks', task.id]">Подробнее</button>
+            <button matButton (click)="remove(task)">Удалить</button>
+        </mat-card-actions>
+    </mat-card>
+    }
+    @if (tasks.length === 0) {
+    <p style="text-align: center; padding: 10px 0;">
+        Задачи не найдены.
+    </p>
+    }
+    }
+</div>

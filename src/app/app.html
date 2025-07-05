@@ -1,0 +1,20 @@
+<div class="page">
+  <div class="block">
+    <mat-toolbar>
+      <span>{{ titleService.title }}</span>
+      <span fxFlex></span>
+      @if (router.url === '/tasks') {
+      <button matIconButton (click)="openCreationForm()" aria-label="Открыть форму создания задачи" matTooltip="Создать задачу">
+        <mat-icon>add</mat-icon>
+      </button>
+      } @else {
+      <button matIconButton (click)="goBack()" aria-label="Вернуться назад" matTooltip="Назад">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      }
+    </mat-toolbar>
+    <div class="block-inner">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

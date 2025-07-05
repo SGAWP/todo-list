@@ -1,0 +1,12 @@
+.page {
+  padding: 20px;
+}
+
+.block {
+  border: 1px solid var(--mat-sys-primary-container);
+  background-color: var(--mat-sys-surface-container-lowest);
+}
+
+.block-inner {
+  padding: 5px 15px 15px 15px;
+}
