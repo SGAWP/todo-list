@@ -16,6 +16,12 @@ git clone https://github.com/SGAWP/todo-list.git
 cd todo-list
 ```
 
+### Установите зависимости:
+
+```bash
+npm install
+```
+
 ### Запустите приложение:
 
 ```bash
